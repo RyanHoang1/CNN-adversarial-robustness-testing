@@ -116,13 +116,6 @@ def train(model, loader, testloader, num_epoch, epsilon): # Train the model
         epoch_train_loss.append(np.mean(running_loss))
         epoch_test_loss.append(evaluate(model, testloader))
     print("DONE TRAINING")
-    plt.plot(epoch_train_loss, label="training loss")
-    plt.plot(epoch_test_loss, label="testing loss")
-    plt.xlabel('epochs')
-    plt.ylabel('loss')
-    plt.title('loss across epochs')
-    plt.legend()
-    plt.show()
 
 def evaluate(model, loader): # Evaluate accuracy on test set
     model.eval() # Set the model to evaluation mode
